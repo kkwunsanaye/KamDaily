@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1084515004622",
+    "firebase_url": "https://kamdaily-b0114.firebaseio.com",
+    "project_id": "kamdaily-b0114",
+    "storage_bucket": "kamdaily-b0114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084515004622:android:69fcb93185a36e478f609f",
+        "android_client_info": {
+          "package_name": "com.senate.kamdaily"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084515004622-grlh66qva9880vf64ai5rlhr6efh32dg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfYNZB46Is6acgxfK1hNkfF0RM2yu1Wfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084515004622-grlh66qva9880vf64ai5rlhr6efh32dg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
