@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:kamdaily/screen/bosslogin.dart';
 import 'package:kamdaily/utility/my_stlye.dart';
 import 'package:kamdaily/utility/normal_dialog.dart';
 
@@ -12,16 +13,39 @@ class _AuthenState extends State<Authen> {
   //  Field
   String user, password;
 
+  @override
+  void initState() {
+    super.initState();
+    checkStatus();
+  }
+
+  Future<Null> checkStatus() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseUser user = await auth.currentUser();
+    if (user != null) {
+      routeToBossLogin();
+    }
+  }
+
   Future<void> checkAuthen() async {
     FirebaseAuth auth = FirebaseAuth.instance;
     await auth
         .signInWithEmailAndPassword(email: user, password: password)
-        .then((value) => print('Authen Success'))
-        .catchError((value) {
-          String title = value.code;
-          String  message = value.message;
-          normalDialog(context, title, message);
-        });
+        .then((value) {
+      print('Authen Success');
+      routeToBossLogin();
+    }).catchError((value) {
+      String title = value.code;
+      String message = value.message;
+      normalDialog(context, title, message);
+    });
+  }
+
+  void routeToBossLogin() {
+    MaterialPageRoute route = MaterialPageRoute(
+      builder: (context) => BossLogin(),
+    );
+    Navigator.pushAndRemoveUntil(context, route, (route) => false);
   }
 
   @override
